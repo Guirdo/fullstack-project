@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const jwt = require('jsonwebtoken')
+const cors = require('cors')
 const userModel = require('./models/User')
 const ContactRoutes = require('./routes/ContactRoutes')
 const PORT = 3000
@@ -8,11 +9,12 @@ const PORT = 3000
 const SECRET_KEY = 'desde septiembre se siente que viene diciembre'
 
 const server = express()
+server.use(cors())
 
 server.use(express.json())
 
 //localhost:3000/auth
-server.use('/api/v1/auth', (req, res) => {
+server.post('/api/v1/auth', (req, res) => {
   const { email, password } = req.body
 
   const validatedUser = userModel.validateUser(email, password)

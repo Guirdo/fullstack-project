@@ -32,7 +32,7 @@ const updateContact = async (id, newContact) => {
 
   oldContact.name = newContact.name;
   oldContact.description = newContact.description
-  oldContact.deadline = newContact.deadline
+  oldContact.phone = newContact.phone
   oldContact.done = newContact.done
 
   return await oldContact.save()

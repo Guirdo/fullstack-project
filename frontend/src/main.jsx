@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
+import './scss/style.scss'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         element: <Contact></Contact>,
       },
       {
-        path: "contacts/",
+        path: "contacts",
         element: <Contacts></Contacts>,
       },
     ],

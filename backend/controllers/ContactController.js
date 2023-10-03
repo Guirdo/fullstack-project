@@ -6,9 +6,9 @@ const getAllContacts = async (req, res) => {
 }
 
 const insertContact = async (req, res) => {
-  const { name, description, deadline, done } = req.body
+  const { name, description, phone, done } = req.body
 
-  await contact.insertContact({ name, description, deadline, done })
+  await contact.insertContact({ name, description, phone, done })
     .then((response) => {
       res.status(201).send({message: 'Contacto agregada'})
     })
@@ -19,9 +19,9 @@ const insertContact = async (req, res) => {
 
 const updateContact = async (req,res) => {
   const { id } = req.params
-  const { name, description, deadline, done } = req.body
+  const { name, description, phone, done } = req.body
 
-  await contact.updateContact(id, { name, description, deadline, done })
+  await contact.updateContact(id, { name, description, phone, done })
   .then((response) => {
     res.status(201).send({message: 'Contacto actualizada'})
   })

@@ -7,7 +7,8 @@ export default function Contacts() {
     const navigate = useNavigate();
 
     const getContacts = () => {
-        fetch('http://localhost:3000/api/v1/contacts', {
+        const API_URL = import.meta.env.VITE_API_URL
+        fetch(`${API_URL}/api/v1/contacts`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
